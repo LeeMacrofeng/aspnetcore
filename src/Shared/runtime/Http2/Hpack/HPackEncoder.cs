@@ -61,7 +61,7 @@ namespace System.Net.Http.HPack
             return true;
         }
 
-        private int EncodeStatusCode(int statusCode, Span<byte> buffer)
+        public int EncodeStatusCode(int statusCode, Span<byte> buffer)
         {
             switch (statusCode)
             {
@@ -87,7 +87,7 @@ namespace System.Net.Http.HPack
             }
         }
 
-        private bool EncodeHeader(string name, string value, Span<byte> buffer, out int length)
+        public bool EncodeHeader(string name, string value, Span<byte> buffer, out int length)
         {
             int i = 0;
             length = 0;
